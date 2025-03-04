@@ -1,0 +1,72 @@
+Could not load bitsandbytes native library: /root/miniconda3/envs/PoisonedRAG/bin/../lib/libstdc++.so.6: version `GLIBCXX_3.4.32' not found (required by /root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/bitsandbytes/libbitsandbytes_cpu.so)
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/bitsandbytes/cextension.py", line 85, in <module>
+    lib = get_native_library()
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/bitsandbytes/cextension.py", line 72, in get_native_library
+    dll = ct.cdll.LoadLibrary(str(binary_path))
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/ctypes/__init__.py", line 452, in LoadLibrary
+    return self._dlltype(name)
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/ctypes/__init__.py", line 374, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: /root/miniconda3/envs/PoisonedRAG/bin/../lib/libstdc++.so.6: version `GLIBCXX_3.4.32' not found (required by /root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/bitsandbytes/libbitsandbytes_cpu.so)
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1390, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/transformers/trainer.py", line 193, in <module>
+    from peft import PeftModel
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/peft/__init__.py", line 22, in <module>
+    from .auto import (
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/peft/auto.py", line 31, in <module>
+    from .config import PeftConfig
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/peft/config.py", line 23, in <module>
+    from .utils import CONFIG_NAME, PeftType, TaskType
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/peft/utils/__init__.py", line 21, in <module>
+    from .loftq_utils import replace_lora_weights_loftq
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/peft/utils/loftq_utils.py", line 35, in <module>
+    import bitsandbytes as bnb
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/bitsandbytes/__init__.py", line 15, in <module>
+    from .nn import modules
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/bitsandbytes/nn/__init__.py", line 21, in <module>
+    from .triton_based_modules import (
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/bitsandbytes/nn/triton_based_modules.py", line 6, in <module>
+    from bitsandbytes.triton.dequantize_rowwise import dequantize_rowwise
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/bitsandbytes/triton/dequantize_rowwise.py", line 36, in <module>
+    def _dequantize_rowwise(
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/triton/runtime/autotuner.py", line 368, in decorator
+    return Autotuner(fn, fn.arg_names, configs, key, reset_to_zero, restore_value, pre_hook=pre_hook,
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/triton/runtime/autotuner.py", line 130, in __init__
+    self.do_bench = driver.active.get_benchmarker()
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/triton/runtime/driver.py", line 23, in __getattr__
+    self._initialize_obj()
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/triton/runtime/driver.py", line 20, in _initialize_obj
+    self._obj = self._init_fn()
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/triton/runtime/driver.py", line 8, in _create_driver
+    raise RuntimeError(f"{len(actives)} active drivers ({actives}). There should only be one.")
+RuntimeError: 0 active drivers ([]). There should only be one.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/PoisonedRAG/main.py", line 8, in <module>
+    from src.utils import load_beir_datasets, load_models
+  File "/root/PoisonedRAG/src/utils.py", line 12, in <module>
+    from sentence_transformers import SentenceTransformer
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/sentence_transformers/__init__.py", line 17, in <module>
+    from sentence_transformers.trainer import SentenceTransformerTrainer
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/sentence_transformers/trainer.py", line 13, in <module>
+    from transformers import EvalPrediction, PreTrainedTokenizerBase, Trainer, TrainerCallback
+  File "<frozen importlib._bootstrap>", line 1075, in _handle_fromlist
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1380, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+  File "/root/miniconda3/envs/PoisonedRAG/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1392, in _get_module
+    raise RuntimeError(
+RuntimeError: Failed to import transformers.trainer because of the following error (look up to see its traceback):
+0 active drivers ([]). There should only be one.

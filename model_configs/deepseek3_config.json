@@ -1,0 +1,18 @@
+{
+    "model_info":{
+        "provider":"deepseek",
+        "name":"deepseek-chat"
+    },
+    "api_key_info":{
+        "api_keys":[
+            "sk-e231c6ce5d3444a79c588d32396454a0"
+        ],
+        "api_key_use": 0
+    },
+    "params":{
+        "temperature":0.1,
+        "seed":100,
+        "gpus":[],
+        "max_output_tokens":800
+    }
+}
