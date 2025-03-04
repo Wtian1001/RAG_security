@@ -25,7 +25,7 @@ ADV_PROMPT = [
 def query_gpt(input, model_name, return_json: bool):
     url = 'https://api.openai.com/v1/chat/completions'
     headers = {
-        'Authorization': f"Bearer {'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'}",
+        'Authorization': f"Bearer {'api key'}",
         'Content-Type': 'application/json'
     }
     data = {
