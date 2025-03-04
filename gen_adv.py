@@ -45,7 +45,7 @@ def query_gpt(input, model_name, return_json: bool):
 def query_deepseek(input, model_name, return_json: bool):
     url = 'https://api.deepseek.com/chat/completions'
     headers = {
-        'Authorization': f"Bearer {'sk-23fc5dc8189d4a73a1abb263dfbbb438'}",
+        'Authorization': f"Bearer {'api key'}",
         'Content-Type': 'application/json'
     }
     data = {
